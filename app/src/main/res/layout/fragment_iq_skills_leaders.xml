@@ -12,4 +12,5 @@
         android:layout_margin="20dp"
         android:background="#F4F6F6"
         tools:listitem="@layout/iq_skills_leaders_list_item"/>
+
 </FrameLayout>

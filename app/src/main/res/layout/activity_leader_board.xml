@@ -46,6 +46,7 @@
                         android:background="@drawable/bg_button"
                         android:paddingStart="25dp"
                         android:paddingEnd="25dp"
+                        android:onClick="onClickSubmit"
                         android:text="Submit"
                         android:textSize="13sp" />
                 </RelativeLayout>
@@ -68,6 +69,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/app_bar_layout"
-            android:background="@color/colorWhite"
+            android:background="#F4F6F6"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

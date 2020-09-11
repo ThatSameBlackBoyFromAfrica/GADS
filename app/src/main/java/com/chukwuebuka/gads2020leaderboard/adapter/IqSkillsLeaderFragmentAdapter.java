@@ -4,13 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chukwuebuka.gads2020leaderboard.R;
-import com.chukwuebuka.gads2020leaderboard.data.LearningLeader;
 import com.chukwuebuka.gads2020leaderboard.data.SkillLeader;
 
 import java.util.List;
@@ -33,6 +33,7 @@ public class IqSkillsLeaderFragmentAdapter extends RecyclerView.Adapter<IqSkills
     public void onBindViewHolder(@NonNull IqSkillsLeaderViewHolder holder, int position) {
         SkillLeader skillLeader = skillLeaders.get(position);
         holder.bind(skillLeader);
+        holder.imSkillImage.setImageResource(R.drawable.skill_iq_trimmed);
     }
 
     @Override
@@ -49,11 +50,13 @@ public class IqSkillsLeaderFragmentAdapter extends RecyclerView.Adapter<IqSkills
     public static class IqSkillsLeaderViewHolder extends RecyclerView.ViewHolder {
         TextView tvIqName;
         TextView tvIqSkill;
+        ImageView imSkillImage;
 
         public IqSkillsLeaderViewHolder(@NonNull View itemView) {
             super(itemView);
             tvIqName = itemView.findViewById(R.id.tv_iq_name);
             tvIqSkill = itemView.findViewById(R.id.tv_iq_skill);
+            imSkillImage = itemView.findViewById(R.id.imageView);
         }
 
         public void bind(SkillLeader leader){

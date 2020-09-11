@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,6 +33,7 @@ public class LearningLeadersFragmentAdapter extends RecyclerView.Adapter<Learnin
     public void onBindViewHolder(@NonNull LearningLeaderViewHolder holder, int position) {
         LearningLeader learningLeader = learningLeaders.get(position);
         holder.bind(learningLeader);
+        holder.ivLearning.setImageResource(R.drawable.top_learner);
     }
 
     @Override
@@ -47,11 +49,13 @@ public class LearningLeadersFragmentAdapter extends RecyclerView.Adapter<Learnin
     public static class LearningLeaderViewHolder extends RecyclerView.ViewHolder {
         TextView tvLearnerName;
         TextView tvHoursLearnt;
+        ImageView ivLearning;
 
         public LearningLeaderViewHolder(@NonNull View itemView) {
             super(itemView);
             tvLearnerName = itemView.findViewById(R.id.tv_learner_name);
             tvHoursLearnt = itemView.findViewById(R.id.tv_hours_learnt);
+            ivLearning = itemView.findViewById(R.id.ivLearning);
         }
 
         public void bind(LearningLeader leader){

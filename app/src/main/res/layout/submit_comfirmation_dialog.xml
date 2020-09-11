@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/im_cancel"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:src="@drawable/ic_cancel_button"-->
+<!--        android:layout_alignParentEnd="true"/>-->
+
+    <TextView
+        android:id="@+id/tv_are_you_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you sure"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\?"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/tv_are_you_sure"
+        android:layout_alignBottom="@id/tv_are_you_sure"
+        android:layout_marginStart="5dp"/>
+
+    <LinearLayout
+        android:id="@+id/yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_layout"
+        android:layout_below="@id/tv_are_you_sure"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_alignStart="@id/tv_are_you_sure"
+        android:layout_marginStart="40dp"
+        android:gravity="center_horizontal"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp">
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Yes"-->
+<!--            android:textColor="@color/colorOrange"-->
+<!--            android:textSize="50sp" />-->
+    </LinearLayout>
+
+</RelativeLayout>

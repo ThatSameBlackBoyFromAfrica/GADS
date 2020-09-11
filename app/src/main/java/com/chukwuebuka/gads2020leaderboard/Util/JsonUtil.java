@@ -10,11 +10,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class JsonUtil {
 
@@ -32,16 +33,18 @@ public class JsonUtil {
             e.printStackTrace();
         }
 
-        HttpURLConnection connection = null;
+        HttpsURLConnection connection = null;
 
         try {
             if (url != null){
-                connection = (HttpURLConnection) url.openConnection();
+                Log.d("Fetch", "Data fetching");
+                connection = (HttpsURLConnection) url.openConnection();
                 InputStream stream = connection.getInputStream();
                 Scanner scanner = new Scanner(stream);
                 scanner.useDelimiter("\\A");
                 boolean hasData = scanner.hasNext();
                 if (hasData){
+                    Log.d("Fetch", "Done fetching Data");
                     return scanner.next();
                 } else return null;
             }
@@ -69,11 +72,11 @@ public class JsonUtil {
             e.printStackTrace();
         }
 
-        HttpURLConnection connection = null;
+        HttpsURLConnection connection = null;
 
         try {
             if (url != null){
-                connection = (HttpURLConnection) url.openConnection();
+                connection = (HttpsURLConnection) url.openConnection();
                 InputStream stream = connection.getInputStream();
                 Scanner scanner = new Scanner(stream);
                 scanner.useDelimiter("\\A");

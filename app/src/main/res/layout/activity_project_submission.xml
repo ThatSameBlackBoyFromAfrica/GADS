@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".ui.ProjectSubmissionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_submission"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="50dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/gads_image2"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:src="@drawable/gads_name"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tv_project_submission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Project Submission"
+        android:textColor="@color/colorOrange"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_below="@id/tb_submission"
+        android:gravity="center_horizontal"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_view"
+        android:layout_below="@id/tv_project_submission"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_project_submission"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/tv_first_name"
+                android:layout_width="180dp"
+                android:layout_height="57dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/bg_text"
+                android:gravity="fill_vertical"
+                android:paddingStart="10dp"
+                android:hint="First Name"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tv_last_name"
+                android:layout_width="180dp"
+                android:layout_height="57dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignEnd="@id/tv_email"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:layout_toEndOf="@id/tv_first_name"
+                android:background="@drawable/bg_text"
+                android:gravity="fill_vertical"
+                android:paddingStart="10dp"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_below="@id/tv_first_name"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bg_text"
+                android:gravity="fill_vertical"
+                android:paddingStart="10dp"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tv_github"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_below="@id/tv_email"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bg_text"
+                android:gravity="fill_vertical"
+                android:paddingStart="10dp"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:inputType="textUri"
+                android:hint="Project on GITHUB (link)"/>
+
+            <Button
+                android:id="@+id/bn_final_submit"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_github"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/bg_button_submit_orange"
+                android:text="Submit"
+                android:textSize="25sp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
+                android:layout_alignEnd="@id/tv_github"
+                android:layout_alignStart="@id/tv_github" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
