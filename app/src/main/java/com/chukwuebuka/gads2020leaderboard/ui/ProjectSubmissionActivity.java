@@ -73,6 +73,7 @@ public class ProjectSubmissionActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 editTextVisible();
+                                setEditText(firstName, lastName, email, github);
                                 dialogInterface.dismiss();
                             }
                         })
@@ -93,16 +94,24 @@ public class ProjectSubmissionActivity extends AppCompatActivity {
     }
 
     private void getTextFromEditText() {
-        firstName = etFirstName.getText().toString();
-        lastName = etLastName.getText().toString();
-        email = etEmail.getText().toString();
-        github = etGithub.getText().toString();
+        firstName = etFirstName.getText().toString().trim();
+        lastName = etLastName.getText().toString().trim();
+        email = etEmail.getText().toString().trim();
+        github = etGithub.getText().toString().trim();
 
         etFirstName.setText("");
         etLastName.setText("");
         etEmail.setText("");
         etGithub.setText("");
     }
+
+    private void setEditText(String firstName, String lastName, String email, String github) {
+        etFirstName.setText(firstName);
+        etLastName.setText(lastName);
+        etEmail.setText(email);
+        etGithub.setText(github);
+    }
+
 
     private void editTextInvisible() {
         etFirstName.setVisibility(View.INVISIBLE);
@@ -122,7 +131,7 @@ public class ProjectSubmissionActivity extends AppCompatActivity {
     }
 
 
-    private void createPost(String firstName, String lastName, String email, String github) {
+    private void createPost(final String firstName, final String lastName, final String email, final String github) {
         PostDataInterface postDataInterface = retrofit.create(PostDataInterface.class);
 
         Call<ResponseBody> call = postDataInterface.createPost(firstName, lastName, email, github);
@@ -136,6 +145,7 @@ public class ProjectSubmissionActivity extends AppCompatActivity {
                             .setView(R.layout.submission_unsuccessful_layout)
                             .create();
                     editTextVisible();
+                    setEditText(firstName, lastName, email, github);
                     alertDialog.show();
                 }else {
                     AlertDialog alertDialog = new AlertDialog.Builder(ProjectSubmissionActivity.this)
@@ -154,9 +164,9 @@ public class ProjectSubmissionActivity extends AppCompatActivity {
                         .setView(R.layout.submission_unsuccessful_layout)
                         .create();
                 editTextVisible();
+                setEditText(firstName, lastName, email, github);
                 alertDialog.show();
             }
         });
     }
-
 }
